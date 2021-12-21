@@ -34,9 +34,13 @@ public class Controller {
      *         students.
      * @throws InstrumentException If unable to retrieve students.
      */
+<<<<<<< Updated upstream
     public List<? extends InstrumentDTO> getAllRentableInstruments(String instrumentType) throws InstrumentException {
+=======
+    public List<? extends InstrumentDTO> getAllRentableInstruments(String type) throws InstrumentException {
+>>>>>>> Stashed changes
         try {
-            return schoolDb.findAllRentableInstruments();
+            return schoolDb.findAllRentableInstruments(type);
         } catch (Exception e) {
             throw new InstrumentException("Unable to list students.", e);
         }
@@ -48,13 +52,12 @@ public class Controller {
      * @param studentID The student's id.
      * @throws InstrumentException If unable to find student.
      */
-    public void rentInstrument(String studentID, String instrumentID) throws InstrumentException {
+    public void rentInstrument(int studentID, int instrumentID) throws InstrumentException {
         String failureMsg = "Could not rent instrument "+instrumentID+"for student: " + studentID;
 
         try {
-            Instrument instrument = new Instrument(instrumentID,studentID,getReturnDate());
-            if(schoolDb.getStudentInstrumentRented(instrument)<2)
-                schoolDb.rentInstrument(instrument);
+            if(schoolDb.getStudentRentedInstrumentAmount(studentID)<2)
+                schoolDb.rentInstrument(studentID,instrumentID);
         } catch (Exception e) {
             throw new InstrumentException(failureMsg, e);
         }
@@ -65,22 +68,26 @@ public class Controller {
      * Terminates the instrument given.
      * @param instrumentID The ID of the instrument.
      * @throws InstrumentException  If failed to terminate.
+     * @throws SchoolDBException
      */
-    public void terminateRental(String instrumentID) throws InstrumentException {
+    public void terminateRental(int instrumentID) throws SchoolDBException, InstrumentException {
         String failureMsg = "Could not terminte instrument: " + instrumentID;
 
         try {
             schoolDb.terminateRental(instrumentID);
             System.out.println("Instrument " + instrumentID + " rental has now been terminated.");
 
-        } catch (InstrumentException e) {
+        } catch (Exception e) {
             throw new InstrumentException(failureMsg, e);
         } 
     }
 
+<<<<<<< Updated upstream
     private String getReturnDate(){
         LocalDate year = LocalDate.now();
         LocalDate nextYear = year.plusYears(1);
         return nextYear.toString();
     }
+=======
+>>>>>>> Stashed changes
 }

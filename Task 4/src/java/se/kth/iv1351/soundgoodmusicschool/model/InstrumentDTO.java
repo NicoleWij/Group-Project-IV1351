@@ -4,7 +4,7 @@ public interface InstrumentDTO {
     /**
      * @return The Instrument ID
      */
-    public String getInstrumentID();
+    public int getInstrumentID();
     /**
      * @return The Instrument Type
      */
@@ -12,11 +12,6 @@ public interface InstrumentDTO {
     /**
      * @return The Return Date
      */
-    public String getReturnDate();
-    /**
-     * @return The Student ID
-     */
-    public String getStudentID();
     /**
      * @return The Instruments Monthly Price
      */
@@ -25,5 +20,8 @@ public interface InstrumentDTO {
      * @return The Instruments Brand
      */
     public String getBrand();
-
+    /**
+     * @return The Instruments Brand
+     */
+    public boolean getIsAvalible();
 }
