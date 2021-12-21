@@ -34,7 +34,7 @@ public class Controller {
      *         students.
      * @throws InstrumentException If unable to retrieve students.
      */
-    public List<? extends InstrumentDTO> getAllRentableInstruments() throws InstrumentException {
+    public List<? extends InstrumentDTO> getAllRentableInstruments(String instrumentType) throws InstrumentException {
         try {
             return schoolDb.findAllRentableInstruments();
         } catch (Exception e) {
@@ -43,7 +43,7 @@ public class Controller {
     }
 
     /**
-     * Creates a new student for the specified student.
+     * Creates a new rentable instrument for the specified student/instrument.
      * 
      * @param studentID The student's id.
      * @throws InstrumentException If unable to find student.
@@ -77,6 +77,7 @@ public class Controller {
             throw new InstrumentException(failureMsg, e);
         } 
     }
+
     private String getReturnDate(){
         LocalDate year = LocalDate.now();
         LocalDate nextYear = year.plusYears(1);

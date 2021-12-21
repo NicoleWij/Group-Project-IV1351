@@ -1,4 +1,7 @@
 package java.se.kth.iv1351.soundgoodmusicschool.startup;
+import java.se.kth.iv1351.soundgoodmusicschool.view.BlockingInterpreter;
+import java.se.kth.iv1351.soundgoodmusicschool.controller.Controller;
+
 /**
  * Starts the SoundGood Client.
  */
