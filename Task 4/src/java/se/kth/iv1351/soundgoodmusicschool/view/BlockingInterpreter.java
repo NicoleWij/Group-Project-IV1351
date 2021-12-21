@@ -59,10 +59,10 @@ public class BlockingInterpreter {
                         keepReceivingCmds = false;
                         break;
                     case RENT:
-                        ctrl.rentInstrument(cmdLine.getParameter(1), cmdLine.getParameter(0));
+                        ctrl.rentInstrument(Integer.parseInt(cmdLine.getParameter(1)), Integer.parseInt(cmdLine.getParameter(0)));
                         break;
                     case TERMINATE:
-                        ctrl.terminateRental(cmdLine.getParameter(0));
+                        ctrl.terminateRental(Integer.parseInt(cmdLine.getParameter(0)));
                         break;
                     case LIST:
                         List<? extends InstrumentDTO> instruments = null;
