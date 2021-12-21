@@ -34,11 +34,7 @@ public class Controller {
      *         students.
      * @throws InstrumentException If unable to retrieve students.
      */
-<<<<<<< Updated upstream
-    public List<? extends InstrumentDTO> getAllRentableInstruments(String instrumentType) throws InstrumentException {
-=======
     public List<? extends InstrumentDTO> getAllRentableInstruments(String type) throws InstrumentException {
->>>>>>> Stashed changes
         try {
             return schoolDb.findAllRentableInstruments(type);
         } catch (Exception e) {
@@ -82,12 +78,4 @@ public class Controller {
         } 
     }
 
-<<<<<<< Updated upstream
-    private String getReturnDate(){
-        LocalDate year = LocalDate.now();
-        LocalDate nextYear = year.plusYears(1);
-        return nextYear.toString();
-    }
-=======
->>>>>>> Stashed changes
 }
