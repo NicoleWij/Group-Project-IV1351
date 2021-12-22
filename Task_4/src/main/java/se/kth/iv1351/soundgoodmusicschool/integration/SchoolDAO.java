@@ -1,8 +1,8 @@
-package java.se.kth.iv1351.soundgoodmusicschool.integration;
+package main.java.se.kth.iv1351.soundgoodmusicschool.integration;
 
 import java.sql.PreparedStatement;
-import java.se.kth.iv1351.soundgoodmusicschool.model.Instrument;
-import java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentDTO;
+import main.java.se.kth.iv1351.soundgoodmusicschool.model.Instrument;
+import main.java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -164,8 +164,8 @@ public class SchoolDAO {
     }
 
     private void connectToSchoolDB() throws ClassNotFoundException, SQLException {
-        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/schooldb",
-                                                 "postgres", "postgres");
+        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/soundgoodmusicschool",
+                                                 "postgres", "admin");
 
         connection.setAutoCommit(false);
     }

@@ -1,13 +1,13 @@
-package java.se.kth.iv1351.soundgoodmusicschool.controller;
-import java.util.ArrayList;
-import java.util.List;
-import java.time.*;
+package main.java.se.kth.iv1351.soundgoodmusicschool.controller;
+import  java.util.ArrayList;
+import  java.util.List;
+import  java.time.*;
 
-import java.se.kth.iv1351.soundgoodmusicschool.integration.SchoolDAO;
-import java.se.kth.iv1351.soundgoodmusicschool.integration.SchoolDBException;
-import java.se.kth.iv1351.soundgoodmusicschool.model.Instrument;
-import java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentDTO;
-import java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentException;
+import  main.java.se.kth.iv1351.soundgoodmusicschool.integration.SchoolDAO;
+import  main.java.se.kth.iv1351.soundgoodmusicschool.integration.SchoolDBException;
+import  main.java.se.kth.iv1351.soundgoodmusicschool.model.Instrument;
+import  main.java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentDTO;
+import  main.java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentException;
 
 /**
  * This is the application's only controller, all calls to the model pass here.
@@ -52,7 +52,6 @@ public class Controller {
         String failureMsg = "Could not rent instrument "+instrumentID+"for student: " + studentID;
 
         try {
-            if(schoolDb.getStudentRentedInstrumentAmount(studentID)<2)
                 schoolDb.rentInstrument(studentID,instrumentID);
         } catch (Exception e) {
             throw new InstrumentException(failureMsg, e);

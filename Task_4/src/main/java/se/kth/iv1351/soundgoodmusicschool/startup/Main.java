@@ -1,7 +1,7 @@
-package java.se.kth.iv1351.soundgoodmusicschool.startup;
-import java.se.kth.iv1351.soundgoodmusicschool.view.BlockingInterpreter;
-import java.se.kth.iv1351.soundgoodmusicschool.controller.Controller;
-import java.se.kth.iv1351.soundgoodmusicschool.integration.SchoolDBException;
+package main.java.se.kth.iv1351.soundgoodmusicschool.startup;
+import main.java.se.kth.iv1351.soundgoodmusicschool.view.BlockingInterpreter;
+import main.java.se.kth.iv1351.soundgoodmusicschool.controller.Controller;
+import main.java.se.kth.iv1351.soundgoodmusicschool.integration.SchoolDBException;
 
 /**
  * Starts the School Client.

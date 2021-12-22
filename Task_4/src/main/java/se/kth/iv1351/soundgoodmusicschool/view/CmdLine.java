@@ -1,4 +1,4 @@
-package java.se.kth.iv1351.soundgoodmusicschool.view;
+package main.java.se.kth.iv1351.soundgoodmusicschool.view;
 
 /**
  * One line of user input, which should be a command and parameters associated

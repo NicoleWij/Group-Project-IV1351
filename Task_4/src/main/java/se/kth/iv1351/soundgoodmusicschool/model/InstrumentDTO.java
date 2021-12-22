@@ -1,4 +1,4 @@
-package java.se.kth.iv1351.soundgoodmusicschool.model;
+package main.java.se.kth.iv1351.soundgoodmusicschool.model;
 
 public interface InstrumentDTO {
     /**

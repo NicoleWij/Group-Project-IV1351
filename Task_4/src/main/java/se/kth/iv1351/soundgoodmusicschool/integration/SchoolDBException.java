@@ -1,4 +1,4 @@
-package java.se.kth.iv1351.soundgoodmusicschool.integration;
+package main.java.se.kth.iv1351.soundgoodmusicschool.integration;
 
 
 public class SchoolDBException extends Exception {

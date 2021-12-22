@@ -1,10 +1,10 @@
-package java.se.kth.iv1351.soundgoodmusicschool.view;
+package main.java.se.kth.iv1351.soundgoodmusicschool.view;
 
 import java.util.List;
 import java.util.Scanner;
 
-import java.se.kth.iv1351.soundgoodmusicschool.controller.Controller;
-import java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentDTO;
+import main.java.se.kth.iv1351.soundgoodmusicschool.controller.Controller;
+import main.java.se.kth.iv1351.soundgoodmusicschool.model.InstrumentDTO;
 
 /**
  * Reads and interprets user commands. This command interpreter is blocking, the user
