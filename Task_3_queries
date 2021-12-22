@@ -1,0 +1,46 @@
+CREATE VIEW individual_per_month AS
+    SELECT COUNT(*) as individual_type,to_char(time, 'MM') as date from lesson
+    WHERE to_char(time, 'YYYY')
+    = '2021' and lesson_type='individual'
+	GROUP BY date;
+
+ 
+CREATE VIEW group_per_month AS
+    SELECT COUNT(*) as group_type,to_char(time, 'MM') as date from lesson
+    WHERE to_char(time, 'YYYY')
+    = '2021' and lesson_type='group'
+	GROUP BY date;
+
+
+CREATE VIEW ensemble_per_month AS
+    SELECT COUNT(*) as ensemble_type ,to_char(time, 'MM') as date from lesson
+    WHERE to_char(time, 'YYYY')
+     = '2021' and lesson_type='ensemble'
+	GROUP BY date;
+	
+ 
+CREATE VIEW total_per_month AS
+    SELECT COUNT(*) as total,to_char(time, 'MM') as date from lesson
+    WHERE to_char(time, 'YYYY')
+     = '2021'
+	 GROUP BY date;
+
+ 
+CREATE VIEW instructor_current_month AS
+    SELECT * from (SELECT COUNT(*) as lessons,instructor_id as instructor from lesson
+    WHERE to_char(time, 'YYYY-MM')
+     = to_char(current_date, 'YYYY-MM')
+     GROUP BY instructor_id
+     ORDER BY lessons desc)
+     as instructor WHERE lessons > 8;
+ 
+CREATE MATERIALIZED VIEW number_of_lessons AS
+    SELECT lesson_type,to_char(time, 'Day') as weekday,genre,
+    CASE
+        WHEN number_of_students = max_spots THEN 'Fully booked'
+        WHEN number_of_students = (max_spots - 1) THEN '1 seats left'
+        WHEN number_of_students = (max_spots - 2) THEN '2 seats left'
+        WHEN number_of_students < (max_spots - 2) THEN 'Many free seats'
+    END as spots
+    FROM lesson WHERE date_trunc('week', current_date + interval '1 week')=date_trunc('week', time) AND lesson_type = 'ensemble' 
+    ORDER BY extract(isodow from time),genre;

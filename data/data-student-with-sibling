@@ -1,0 +1,32 @@
+INSERT INTO student (id,has_sibling,parent_contact_details,person_id)
+VALUES 
+    (1,true,'063-882-5063',(SELECT id FROM person WHERE person_number = '09/12/1944-3096')),
+    (2,true,'041-165-7625',(SELECT id FROM person WHERE person_number = '06/07/1915-5677')),
+    (3,false,'005-348-5134',(SELECT id FROM person WHERE person_number = '10/09/1986-7711')),
+    (4,false,'037-129-8184',(SELECT id FROM person WHERE person_number = '24/01/1929-3227')),
+    (5,true,'044-733-8236',(SELECT id FROM person WHERE person_number = '02/11/1920-6956')),
+    (6,true,'041-998-4524',(SELECT id FROM person WHERE person_number = '27/04/2006-4992')),
+    (7,false,'081-516-7663',(SELECT id FROM person WHERE person_number = '21/01/2013-5452')),
+    (8,false,'063-586-1314',(SELECT id FROM person WHERE person_number = '09/08/1947-9037')),
+    (9,false,'033-666-8986',(SELECT id FROM person WHERE person_number = '04/02/1986-3846')),
+    (10,false,'065-473-1034',(SELECT id FROM person WHERE person_number = '26/02/1979-5070')),
+    (11,false,'095-495-1546',(SELECT id FROM person WHERE person_number = '19/07/1961-5960')),
+    (12,false,'051-303-6870',(SELECT id FROM person WHERE person_number = '15/10/1991-3842')),
+    (13,false,'068-288-1849',(SELECT id FROM person WHERE person_number = '30/11/2019-5791')),
+    (14,false,'069-385-7588',(SELECT id FROM person WHERE person_number = '07/05/2013-8815')),
+    (15,false,'022-106-3286',(SELECT id FROM person WHERE person_number = '11/01/1926-3007')),
+    (16,true,'001-258-9639',(SELECT id FROM person WHERE person_number = '08/04/1995-2224')),
+    (17,true,'031-455-3733',(SELECT id FROM person WHERE person_number = '26/01/1936-7207')),
+    (18,true,'072-456-5683',(SELECT id FROM person WHERE person_number = '17/09/2000-3096')),
+    (19,false,'017-211-7384',(SELECT id FROM person WHERE person_number = '09/02/1929-6446')),
+    (20,true,'029-295-5262',(SELECT id FROM person WHERE person_number = '07/12/1934-4875')),
+    (21,true,'041-641-5167',(SELECT id FROM person WHERE person_number = '09/08/1968-6109')),
+    (22,false,'078-377-3173',(SELECT id FROM person WHERE person_number = '15/06/1992-5206')),
+    (23,false,'013-474-3292',(SELECT id FROM person WHERE person_number = '14/08/1930-8109')),
+    (24,true,'076-448-2056',(SELECT id FROM person WHERE person_number = '30/09/1934-5158')),
+    (25,true,'058-259-6438',(SELECT id FROM person WHERE person_number = '15/02/1958-8510'));
+
+
+
+
+

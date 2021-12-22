@@ -1,0 +1,7 @@
+INSERT INTO instructor (id,teach_ensemble,person_id)
+VALUES 
+    (1,true,(SELECT id FROM person WHERE person_number = '20/07/1982-2691')),
+    (2,false,(SELECT id FROM person WHERE person_number = '11/08/1999-6995')),
+    (3,false,(SELECT id FROM person WHERE person_number = '24/09/1926-6081')),
+    (4,true,(SELECT id FROM person WHERE person_number = '10/11/1992-3932')),
+    (5,false,(SELECT id FROM person WHERE person_number = '31/01/2001-8818'));

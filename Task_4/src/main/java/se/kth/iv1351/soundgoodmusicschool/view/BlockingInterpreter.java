@@ -37,9 +37,6 @@ public class BlockingInterpreter {
      * UI has been stopped. The UI is stopped either when the user gives the
      * "quit" command, or when the method <code>stop()</code> is called.
      * 
-     * cmdLine.getParameter(2) = instrumentType, 
-     * cmdLine.getParameter(1) = studentID, 
-     * cmdLine.getParameter(0) = instrumentID
      */
     public void handleCmds() {
         keepReceivingCmds = true;
@@ -59,17 +56,19 @@ public class BlockingInterpreter {
                         keepReceivingCmds = false;
                         break;
                     case RENT:
-                        ctrl.rentInstrument(Integer.parseInt(cmdLine.getParameter(1)), Integer.parseInt(cmdLine.getParameter(0)));
+                    // rent  student id instument id
+                        ctrl.rentInstrument(Integer.parseInt(cmdLine.getParameter(0)), Integer.parseInt(cmdLine.getParameter(1)));
                         break;
                     case TERMINATE:
                         ctrl.terminateRental(Integer.parseInt(cmdLine.getParameter(0)));
                         break;
                     case LIST:
-                        List<? extends InstrumentDTO> instruments = null;
+                        List<? extends InstrumentDTO> 
+                        instruments = null;
                         if (cmdLine.getParameter(0).equals("")) {
                             System.out.println("illegal command. Please enter command:");
                         } else {
-                            instruments = ctrl.getAllRentableInstruments(cmdLine.getParameter(2));
+                            instruments = ctrl.getAllRentableInstruments(cmdLine.getParameter(0));
                         }
                         for (InstrumentDTO instrument : instruments) {
                             System.out.println("Instrument ID: " + instrument.getInstrumentID() + ", "

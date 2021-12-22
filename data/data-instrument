@@ -1,0 +1,17 @@
+INSERT INTO instrument (id,type,brand,price,is_avalible)
+VALUES
+  (1,'drums','shure',91,'true'),
+  (2,'piano','shure',56,'true'),
+  (3,'viola','yamaha',148,'true'),
+  (4,'piano','gibson',63,'true'),
+  (5,'viola','roland',57,'true'),
+  (6,'viola','gibson',51,'true'),
+  (7,'viola','gibson',71,'true'),
+  (8,'bass','yamaha',128,'false'),
+  (9,'triangle','roland',64,'true'),
+  (10,'banjo','yamaha',112,'false'),
+  (11,'guitarr','roland',103,'true'),
+  (12,'drums','null',127,'false'),
+  (13,'drums','yamaha',116,'true'),
+  (14,'drums','null',77,'true'),
+  (15,'bass','gibson',56,'false');

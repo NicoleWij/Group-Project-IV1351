@@ -49,7 +49,7 @@ public class Controller {
      * @throws InstrumentException If unable to find student.
      */
     public void rentInstrument(int studentID, int instrumentID) throws InstrumentException {
-        String failureMsg = "Could not rent instrument "+instrumentID+"for student: " + studentID;
+        String failureMsg = "Could not rent instrument "+instrumentID+" for student: " + studentID;
 
         try {
                 schoolDb.rentInstrument(studentID,instrumentID);
@@ -70,7 +70,6 @@ public class Controller {
 
         try {
             schoolDb.terminateRental(instrumentID);
-            System.out.println("Instrument " + instrumentID + " rental has now been terminated.");
 
         } catch (Exception e) {
             throw new InstrumentException(failureMsg, e);
