@@ -1,29 +1,16 @@
-CREATE VIEW individual_per_month AS
-    SELECT COUNT(*) as individual_type,to_char(time, 'MM') as date from lesson
+CREATE VIEW type_per_month AS
+    SELECT lesson_type ,COUNT(*) as amount ,to_char(time, 'MM') as date from lesson
     WHERE to_char(time, 'YYYY')
-    = '2021' and lesson_type='individual'
-	GROUP BY date;
+    = '2021' 
+	GROUP BY date, lesson_type;
 
- 
-CREATE VIEW group_per_month AS
-    SELECT COUNT(*) as group_type,to_char(time, 'MM') as date from lesson
-    WHERE to_char(time, 'YYYY')
-    = '2021' and lesson_type='group'
-	GROUP BY date;
-
-
-CREATE VIEW ensemble_per_month AS
-    SELECT COUNT(*) as ensemble_type ,to_char(time, 'MM') as date from lesson
-    WHERE to_char(time, 'YYYY')
-     = '2021' and lesson_type='ensemble'
-	GROUP BY date;
-	
  
 CREATE VIEW total_per_month AS
     SELECT COUNT(*) as total,to_char(time, 'MM') as date from lesson
     WHERE to_char(time, 'YYYY')
      = '2021'
 	 GROUP BY date;
+
 
  
 CREATE VIEW instructor_current_month AS
