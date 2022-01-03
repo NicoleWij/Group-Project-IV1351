@@ -95,14 +95,14 @@ ALTER TABLE person_phone_number ADD CONSTRAINT PK_person_phone_number PRIMARY KE
 
 
 CREATE TABLE rented_instrument (
- rental_id INT NOT NULL UNIQUE,
+ id INT NOT NULL UNIQUE,
  time_of_rental TIMESTAMP NOT NULL,
  instrument_id INT NOT NULL,
  student_id INT NOT NULL,
  previously_rented BOOLEAN NOT NULL
 );
 
-ALTER TABLE rented_instrument ADD CONSTRAINT PK_rented_instrument PRIMARY KEY (rental_id);
+ALTER TABLE rented_instrument ADD CONSTRAINT PK_rented_instrument PRIMARY KEY (id);
 
 CREATE TABLE known_instrument (
  id int NOT NULL,

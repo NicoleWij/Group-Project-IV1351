@@ -11,6 +11,14 @@ CREATE VIEW total_per_month AS
      = '2021'
 	 GROUP BY date;
 
+ 
+CREATE VIEW average_per_year AS
+SELECT count(CASE WHEN EXTRACT(YEAR FROM time) = '2021' THEN 1 ELSE NULL END)/12 as average FROM lesson;
+
+CREATE VIEW average_type_per_year AS
+SELECT lesson_type ,COUNT(*)/12 as amount from lesson
+WHERE EXTRACT(YEAR FROM time) = '2021'
+GROUP BY lesson_type;
 
  
 CREATE VIEW instructor_current_month AS
