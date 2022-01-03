@@ -1,9 +1,0 @@
-INSERT INTO known_instrument (id,type)
-VALUES
-(1,'guitarr'),
-(2,'piano'),
-(3,'viola'),
-(4,'drums'),
-(5,'triangle'),
-(6,'banjo'),
-(7,'bass');

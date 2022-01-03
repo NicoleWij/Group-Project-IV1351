@@ -1,5 +1,3 @@
-CREATE DATABASE soundgoodmusicschool;
-
 
 CREATE TABLE address (
  id INT NOT NULL,
