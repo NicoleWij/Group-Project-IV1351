@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "main.java.se.kth.iv1351.soundgoodmusicschool.startup.Main",
+      "projectName": "Group-Project-IV1351_b7cb6cda"
+    },
+    {
+      "type": "java",
       "name": "Launch Current File",
       "request": "launch",
       "mainClass": "${file}"

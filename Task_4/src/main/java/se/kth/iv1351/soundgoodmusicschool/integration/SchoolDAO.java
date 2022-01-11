@@ -15,7 +15,7 @@ import java.util.List;
 
 public class SchoolDAO {
     private static final String RENTED_INSTRUMENT_TABLE_NAME = "rented_instrument";
-    private static final String RENTED_INSTRUMENT_PK_COLUMN_NAME = "rental_id";
+    private static final String RENTED_INSTRUMENT_PK_COLUMN_NAME = "id";
     private static final String TIME_OF_RENTAL_COLUMN_NAME = "time_of_rental";
     private static final String PREVIOUSLY_RENTED_COLUMN_NAME = "previously_rented";
     private static final String RENTED_STUDENT_FK_COLUMN_NAME = "student_id";
@@ -185,8 +185,8 @@ public class SchoolDAO {
 
 
     private void connectToSchoolDB() throws ClassNotFoundException, SQLException {
-        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/soundgoodmusicschool",
-                                                 "postgres", "admin");
+        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SoundgoodMusicSchool",
+                                                 "postgres", "MinMaxwell16");
 
         connection.setAutoCommit(false);
     }
